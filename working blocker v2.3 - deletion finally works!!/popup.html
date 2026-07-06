@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Read Receipt Blocker</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <div class="dot" id="statusDot"></div>
+      <h1>Read Receipts</h1>
+    </div>
+
+    <div class="row">
+      <div class="label">
+        <span id="statusText">Off</span>
+        <p id="statusSub">Google Chat will mark messages as read normally.</p>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="toggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="note">
+       some functionality may not work while this is on — turn it off again once
+      you're done reading.
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="header">
+      <div class="dot" id="hkStatusDot"></div>
+      <h1>Hotkey Delete</h1>
+    </div>
+
+    <div class="row">
+      <div class="label">
+        <span id="hkStatusText">Off</span>
+        <p id="hkStatusSub">Deletes your most recent message instantly — no undo.</p>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="hkToggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="note">
+      Press <strong>Ctrl+Shift+Backspace</strong>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="header">
+      <div class="dot" id="mlStatusDot"></div>
+      <h1>Message History</h1>
+    </div>
+
+    <div class="row">
+      <div class="label">
+        <span id="mlStatusText">Off</span>
+        <p id="mlStatusSub">See original text when a message is edited or deleted.</p>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="mlToggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="note">
+      
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
