@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Ghost Client Settings</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="header"><h1>Ghost Client Settings</h1></div>
+    
+    <!-- Existing Toggles -->
+    <div class="row">
+      <div class="label"><span id="statusText">Read Receipts</span></div>
+      <input type="checkbox" id="toggle" />
+    </div>
+    <div class="row">
+      <div class="label"><span id="hkStatusText">Hotkey Delete</span></div>
+      <input type="checkbox" id="hkToggle" />
+    </div>
+    <div class="row">
+      <div class="label"><span id="mlStatusText">Message History</span></div>
+      <input type="checkbox" id="mlToggle" />
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- New File Upload Section -->
+    <div class="row">
+      <div class="label">
+        <span>Custom Background Image</span>
+        <input type="file" id="cssFilePicker" accept="image/*" />
+      </div>
+    </div>
+    <button id="saveThemeBtn">Save Background</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

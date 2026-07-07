@@ -1,0 +1,52 @@
+{
+  "manifest_version": 3,
+  "name": "Google Chat Read Receipt Blocker",
+  "version": "1.0.0",
+  "description": "Toggle to view Google Chat messages without sending read receipts.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://chat.google.com/*",
+    "https://mail.google.com/*"
+  ],
+  "action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png"
+    },
+    "default_title": "Ghost Client Settings",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://chat.google.com/*", "https://mail.google.com/*"],
+      "js": ["content_bridge.js", "sidebar_injector.js"],
+      "css": ["popup.css"],
+      "run_at": "document_idle",
+      "all_frames": true
+    },
+    {
+      "matches": ["https://chat.google.com/*", "https://mail.google.com/*"],
+      "js": ["content_main.js"],
+      "world": "MAIN",
+      "run_at": "document_start",
+      "all_frames": true
+    },
+    {
+      "matches": ["https://chat.google.com/*", "https://mail.google.com/*"],
+      "js": ["hotkey_delete.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    },
+    {
+      "matches": ["https://chat.google.com/*", "https://mail.google.com/*"],
+      "js": ["message_logger.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
